@@ -14,33 +14,31 @@ namespace _1DV406_Labb1//Marco Villegas
 
         }
 
-        protected void Knap_Click(object sender, EventArgs e)
+        protected void Knap_Click(object sender, EventArgs e)// funktionen som startar när kanpen trycks 
         {
-            
 
-            if (Knap.Text == "Rensa")
+
+            if (Knap.Text == "Rensa")// Nolställer text rutan om knapens text är rensa
             {
-                TextBox1.Enabled = true;
+                TextBox1.Enabled = true;// man kan skriva i rutan igen 
 
-                TextBox1.Text = "";
+                TextBox1.Text = "";// rensar text rutan 
 
-                TextBox1.Enabled = true;
+                Resultat.Visible = false;// tar bort resultat testen 
 
-                Resultat.Visible = false;
-
-                Knap.Text = "Antal versaler";
+                Knap.Text = "Antal versaler";// knapen får texten Antal versaler
             }
-            else if (Knap.Text == "Antal versaler")
+            else if (Knap.Text == "Antal versaler")// Startar funktionen som räknar versaler n om knapens text är Antal versaler
             {
-                int stor = Model.TextAnalyzer.Versaler(TextBox1.Text);
+                int stor = Model.TextAnalyzer.Versaler(TextBox1.Text);// anropar funktion som räknar versaler
 
-                TextBox1.Enabled = false;
+                TextBox1.Enabled = false;// man kan inte längre skriva i text rutan 
 
-                Resultat.Text = String.Format("Texten har {0} versaler", stor);
+                Resultat.Text = String.Format("Texten har {0} versaler", stor);// visar text med resultat
 
-                Resultat.Visible = true;
+                Resultat.Visible = true;// gör så att resultat texten visas på sidan 
 
-                Knap.Text = "Rensa";
+                Knap.Text = "Rensa";// knapen får texten rensa 
             }
      
         }
